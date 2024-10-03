@@ -12,8 +12,6 @@ export const addTodo = async (req, res, next) => {
     }
 };
 
-
-
 export const getTodos = async (req, res, next) => {
     try {
         // fetch todos from database

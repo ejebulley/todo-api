@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from 'mongoose';
 import todoRouter from "./routes/todo.js";
 import userRouter from "./routes/user.js";
+import cors from "cors";
 // create an express app
 const app = express();
 
@@ -9,6 +10,7 @@ const app = express();
 await mongoose.connect(process.env.MONGO_URI);
 
 // use middlewares
+app.use(cors());
 app.use(express.json());
 
 // use route
