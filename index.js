@@ -10,8 +10,8 @@ const app = express();
 await mongoose.connect(process.env.MONGO_URI);
 
 // use middlewares
-app.use(cors());
 app.use(express.json());
+app.use(cors());
 
 // use route
 app.use(todoRouter);
