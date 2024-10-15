@@ -22,8 +22,13 @@ export const addTodo = async (req, res, next) => {
 
 export const getTodos = async (req, res, next) => {
     try {
+        const { filter = "{}", limit = 10, skip = 0 } = req.query;
+        // console.log(req.query)
         // fetch todos from database
-        const todos = await TodoModel.find();
+        const todos = await TodoModel
+            .find(JSON.parse(filter))
+            .limit(limit)
+            .skip(skip);
         // return response
         res.status(200).json(todos);
     } catch (error) {
