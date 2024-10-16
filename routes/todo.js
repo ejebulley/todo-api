@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { addTodo, deleteTodo, getTodos, updateTodo } from "../controllers/todo.js";
-import { localUpload,todoIconUpload } from "../middlewares/upload.js";
+import { todoIconUpload } from "../middlewares/upload.js";
 
 // create a Router
 
